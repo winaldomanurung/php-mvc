@@ -1,3 +1,3 @@
 <h1>
-  Ini adalah halaman page.
+  My pages.
 </h1>
