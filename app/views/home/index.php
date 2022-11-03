@@ -3,7 +3,7 @@
     <h1>
       Selamat datang di website ini.
     </h1>
-    <p>Created by Winaldo Manurung</p>
+    <p>Created by <?= $data['nama'] ?></p>
   </div>
 
 </div>
