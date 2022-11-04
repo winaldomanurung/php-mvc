@@ -5,27 +5,44 @@
     </div>
 
   </div>
-  <div class="row">
+
+  <div class="row mb-3">
     <div class="col-6">
       <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
         Tambah Data Mahasiswa
       </button>
-      <br><br>
-      <h3>Daftar Mahasiswa</h3>
-      <ul class="list-group">
-        <?php foreach ($data['mhs'] as $mhs) : ?>
-          <li class="list-group-item">
-            <?= $mhs['nama']; ?>
-            <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge text-bg-danger float-end ml-1" onclick="return confirm('Yakin?')">Hapus</a>
-            <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge text-bg-success float-end ml-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id']; ?>">Ubah</a>
-            <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge text-bg-primary float-end ml-1">Detail</a>
-
-          </li>
-        <?php endforeach; ?>
-      </ul>
-
     </div>
   </div>
+
+  <div class="row mb-3">
+    <div class="col-6">
+      <form action="<?= BASEURL; ?>/mahasiswa/cari" method="POST">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Cari mahasiswa" name="keyword" id="keyword" autocomplete="off">
+          <button class="btn btn-primary" type="submit" id="tombolCari">Cari</button>
+        </div>
+    </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <h3>Daftar Mahasiswa</h3>
+    <ul class="list-group">
+      <?php foreach ($data['mhs'] as $mhs) : ?>
+        <li class="list-group-item">
+          <?= $mhs['nama']; ?>
+          <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge text-bg-danger float-end ml-1" onclick="return confirm('Yakin?')">Hapus</a>
+          <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge text-bg-success float-end ml-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id']; ?>">Ubah</a>
+          <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge text-bg-primary float-end ml-1">Detail</a>
+
+        </li>
+      <?php endforeach; ?>
+    </ul>
+
+  </div>
+</div>
 
 </div>
 
